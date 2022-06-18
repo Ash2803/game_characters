@@ -5,8 +5,10 @@ import random
 
 def main():
     fake = Faker("ru_RU")
-    skills = ["Дипломатия", "Убеждение", "Изготовление ядов", "Обман", "Хитрость", "Прямолинейность", "Харизма",
-              "Креативность", "Продуктивность", "Критическое мышление", "Инициативность", "Гибкость"]
+    skills = ["Дипломатия", "Убеждение", "Изготовление ядов",
+              "Обман", "Хитрость", "Прямолинейность",
+              "Харизма", "Креативность", "Продуктивность",
+              "Критическое мышление", "Инициативность", "Гибкость"]
     rune_dict = {
         'а': 'а͠', 'б': 'б̋', 'в': 'в͒͠',
         'г': 'г͒͠', 'д': 'д̋', 'е': 'е͠',
@@ -54,7 +56,8 @@ def main():
             "skill_2": sorted_skills[1],
             "skill_3": sorted_skills[2]
         }
-        file_operations.render_template(f"src/charsheet.svg", f"output/svg/charsheet-{i}.svg", card)
+        file_operations.render_template(f"src/charsheet.svg",
+                                        f"character_cards/svg/charsheet-{i}.svg", card)
 
 
 if __name__ == '__main__':
