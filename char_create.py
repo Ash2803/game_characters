@@ -1,6 +1,7 @@
 import file_operations
 from faker import Faker
 import random
+import os
 
 
 def main():
@@ -40,6 +41,8 @@ def main():
         for letter in skill:
             runic_skills[-1] += rune_dict.get(letter, "")
 
+    os.makedirs("C://Users//Ash//PycharmProjects//random_characters//characters", exist_ok=True)
+
     for i in range(0, 10):
         sorted_skills = random.sample(runic_skills, 3)
         card = {
@@ -57,7 +60,7 @@ def main():
             "skill_3": sorted_skills[2]
         }
         file_operations.render_template(f"src/charsheet.svg",
-                                        f"character_cards/svg/charsheet-{i}.svg", card)
+                                        f"characters/charsheet-{i}.svg", card)
 
 
 if __name__ == '__main__':
